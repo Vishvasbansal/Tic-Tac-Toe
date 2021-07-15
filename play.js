@@ -1,26 +1,29 @@
 var text = ['x', 'o'];
 var chance = 0;
-var no = [];    //stores the buttons involved in tic tac toe
+var no = []; //stores the buttons involved in tic tac toe
 
-$(".button").on("click", function() {
-  $(this).off("click");
-  if (chance % 2 === 1) {
-    $(this).html(text[chance]);
-    $(this).addClass("changeColor");
-    chance = (chance + 1) % 2;
-    check();
-  } else {
-    $(this).html(text[chance]);
-    $(this).addClass("changeColor");
-    chance = (chance + 1) % 2;
-    check();
-  }
-});
+addEvent();
+function addEvent() {
+  $(".button").on("click", function() {
+    $(this).off("click");
+    if (chance % 2 === 1) {
+      $(this).html(text[chance]);
+      $(this).addClass("changeColor");
+      chance = (chance + 1) % 2;
+      check();
+    } else {
+      $(this).html(text[chance]);
+      $(this).addClass("changeColor");
+      chance = (chance + 1) % 2;
+      check();
+    }
+  });
+}
 
 //this funtion checks if any player has won the game
 function check() {
   no = $(".button");
-  var win=0;
+  var win = 0;
   //this loop checks for the rows
   for (var i = 0; i < 9; i += 3) {
     var nos = [];
@@ -35,7 +38,7 @@ function check() {
       found("r", i);
       win++;
     }
-}
+  }
   //this loop checks for the columns
   for (var i = 0; i < 3; i += 1) {
     var nos = [];
@@ -94,7 +97,7 @@ function check() {
     }
   }
   //if no one has won the game then check if it has ended
-  if(win===0){
+  if (win === 0) {
     doesItEnd();
   }
 }
@@ -137,15 +140,15 @@ function another() {
   $(".again").html("<button class='again' onclick='refresh()'>Play Again</button>");
 }
 //starts the game again
-function refresh(){
-  chance=0;
-  for(var i=0;i<no.length;i++)
-  {
+function refresh() {
+  chance = 0;
+  for (var i = 0; i < no.length; i++) {
     $(no[i]).text('-');
     $(no[i]).removeClass("changeColor");
     $(no[i]).removeClass("winner");
     $(".again").html("");
     $(".title").html("Tic Tac Toe");
   }
-  no=0;
+  no = 0;
+  addEvent();
 }
