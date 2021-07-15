@@ -1,0 +1,60 @@
+body {
+  text-align: center;
+  background-color: #385a80;
+}
+
+button{
+  border: none;
+  font-size: 5.5rem;
+  color: #385a80;
+  background-color: #385a80;
+}
+
+a{
+  color: bisque;
+  text-decoration: none;
+}
+
+#footer{
+  margin-top: 2%;
+  color: bisque;
+}
+
+.title{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3rem;
+  margin: 3.5%;
+  color: #FEF2BF;
+}
+
+.row{
+  margin: 0 30%;
+  flex-wrap: nowrap;
+}
+
+.changeColor{
+  color: #db9853;
+}
+
+.winner{
+  color: #5be35b;
+}
+
+.left{
+  border-right: solid black;
+}
+
+.right{
+  border-left: solid black;
+}
+
+.middle{
+  border-top: solid black;
+  border-bottom: solid black;
+}
+
+.again{
+  color: #ffffff;
+  font-size: 1.6rem;
+  margin-top: 1%; 
+}
